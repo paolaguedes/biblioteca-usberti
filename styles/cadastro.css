@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-section {
+    border: 1px solid #C4C4C4;
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgb(0, 0, 0,0.6);
+}
+
+.container-section .div-titulo {
+    padding: 4%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-section .div-titulo h1 {
+    background-color: rgba(101,53,15,0.76);
+    padding: 20px 100px;
+    border-radius: 20px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+}
+
+.container-section .content-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-section .content-input  input {
+    border-bottom: 1px solid #C4C4C4;
+    margin-bottom: 10px;
+    height: 30px;
+}
+
+.container-section .content-input  select {
+    border-bottom: 1px solid #C4C4C4;
+    height: 50px;
+    font-weight: bold;
+}
+
+.container-section .content-input  select:focus {
+    border: 0 0 1px;
+    outline: 0;
+}
+
+.container-section .content-input  input:focus {
+    border: 0 0 1px;
+    outline: 0;
+}
+
+.container-section .content-input  label {
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.8);
+    font-weight: bold;
+}
+
+.container-section .content-input #coluna1 {
+    display: flex;
+    flex-direction: column;
+    max-width: 44%;
+    width: 100%;
+    margin: 4%;
+}
+
+.container-section .content-input #coluna2 {
+    display: flex;
+    flex-direction: column;
+    max-width: 44%;
+    width: 100%;
+    margin: 4%;
+}
+
+.container-section .botoes {
+    margin: 0 4% 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.container-section .botoes button {
+    background-color: rgba(101,53,15,0.76);
+    padding: 20px 100px;
+    border-radius: 20px;
+    font-size: 20px;
+    color: white;
+    transition: all 1s;
+    text-transform: uppercase;
+}
+
+.container-section .botoes button:hover {
+    background-color: rgba(101,53,15,1);
+}
+
+.container-section .botoes a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(124, 67, 20);
+}
+
+.container-section .botoes a:hover {
+    color: rgb(51, 28, 9);
+}

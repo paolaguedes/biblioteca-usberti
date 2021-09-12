@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #E5E5E5;
+}
+
+header {
+    margin: 0 auto;
+}
+
+.container-inicial {
+    padding: 40px 45px;   
+}
+
+.content-inicial {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    object-fit: cover;
+    filter: grayscale(90%);
+} 
+
+.div-text {
+    text-transform: uppercase;
+}
+
+.div-text h1 {
+    padding-top: 40px;
+    font-size: 70px;
+    color: white;
+    line-height: 120px;
+}
+
+.div-text a {
+    margin-left: 35%;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(101, 53, 15, 0.84);
+    padding: 15px 50px;
+    border-radius: 20px;
+    transition: all 1s;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.div-text a:hover {
+    background-color: rgb(87, 47, 15);   
+}
+
+/* main */
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+main .cards-container {
+    margin: 10% auto;
+}
+
+main .cards-container .section-cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+main .cards-container .section-cards a {
+    text-decoration: none;
+}
+
+main .cards-container .section-cards div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: 300px;
+    background-color: rgba(101, 53, 15, 0.76) ;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    transition: all 1s;
+}
+
+main .cards-container .section-cards div:hover {
+    background-color: rgba(101, 53, 15, 1);
+}
+
+main .cards-container .section-cards div p {
+    padding-top: 20%;
+    font-size: 25px;
+    color: white;
+    text-transform: uppercase;
+}
+
+main .cards-container .section-cards div img {
+    width: 101px;
+    height: 90px;
+}
+
+main .cards-container .section-cards #div-laptop {
+    background-color: rgba(35, 23, 9, 0.73);
+}
+
+main .cards-container .section-cards #div-laptop:hover {
+    background-color: rgba(35, 23, 9, 1);
+}
