@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    background-color: #F8F8FF;
+}
+
+.container-list {
+    border: 1px solid #C4C4C4;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgb(0, 0, 0,0.6);
+    max-width: 1000px;
+    width: 100%;
+    padding: 30px;
+}
+
+.container-list .container-list-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-list .container-list-header .titulo {
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    color:rgba(0, 0, 0,0.77);
+}
+
+.container-list .container-list-header form {
+    max-width: 900px;
+    width: 100%;
+}
+
+.container-list .container-list-header form .campo-pesquisar {
+    border: 1px solid rgba(0, 0, 0,0.77);
+    border-radius: 20px;
+    max-width: 40%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(161, 118, 78,0.7);
+    margin: 0 auto;
+}
+
+
+.container-list .container-list-header form .campo-pesquisar img {
+    margin-left: 10px;
+}
+
+.container-list .container-list-header form .campo-pesquisar input {
+    background-color: transparent;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.container-list .container-list-header form .campo-pesquisar input:focus {
+    border:0;
+    outline: 0;
+}
+
+.container-list .container-list-header form .campo-pesquisar input::placeholder {
+    color: white;
+}
