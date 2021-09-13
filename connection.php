@@ -8,7 +8,7 @@
     $conexao = new mysqli($host, $user, $password, $database);
 
     // if($conexao->connect_errno){
-    // echo "Falha na conexão"; 
+    // echo "Falha na conexão";
     // } else {
     // echo "Conexão efetuada";
     // }

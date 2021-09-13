@@ -1,5 +1,6 @@
 <?php
-    if(isset($_POST['submit'])){
+
+if(isset($_POST['submit'])){
         // print_r('- nome: ' . $_POST['nomeLivro']);
         // print_r('<br>');
         // print_r('- autor: ' . $_POST['autor']);
@@ -15,8 +16,7 @@
         // print_r('- isbn: ' . $_POST['isbn']);
         // print_r('<br>');
         // print_r('- pagina: ' . $_POST['pagina']);
-
-        include_once('../connection.php');
+    include_once('../connection.php');
 
         $isbn =  $_POST['isbn'];
         $nomeLivro =  $_POST['nomeLivro'];
@@ -26,10 +26,18 @@
         $editora =  $_POST['editora'];
         $local =  $_POST['local'];
         $pagina =  $_POST['pagina'];
+       
+    // $result = $mysqli->query("SELECT * FROM livros WHERE isbn = '{$isbn}'");
+    // $row = $result->fetch_row();
 
-        $result = mysqli_query($conexao, "INSERT INTO livros(nomeLivro,autor,edicao,categoria,local,editora,isbn,pagina)
-         VALUES ('$isbn','$nomeLivro','$autor','$edicao','$categoria','$editora','$local','$pagina')");
-    }
+    // if ($row[0] > 0) {
+    // echo "<script> alert('A chave ISBN já foi cadastrada anteriormente.') </script>";
+    // } else {
+    $result = mysqli_query($conexao, "INSERT INTO livros (isbn,nomeLivro,autor,edicao,categoria,editora,local,pagina)
+    VALUES ('$isbn','$nomeLivro','$autor','$edicao','$categoria','$editora','$local','$pagina')");
+    // }
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -47,7 +55,7 @@
             <div class="div-titulo">
                 <h1>Ficha</h1>
             </div>
-            <form class="form-container" action="confirme.html" method="post">
+            <form class="form-container" action="cadastro.php" method="post">
             <div class="form-content">
              <fieldset id="coluna1">
                 <label for="nomeLivro">Nome</label>
