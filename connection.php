@@ -1,14 +1,16 @@
 <?php
 
-$host = "localhost";
-$user = "root";
-$password = "root";
-$port = "3306";
-$database = "librarysystem";
+    $host = 'localhost';
+    $user = 'root';
+    $password = '';
+    $database = "biblioteca";
 
-$mysqli = new mysqli($host, $user, $password, $port, $database);
+    $conexao = new mysqli($host, $user, $password, $database);
 
-if($msqli->connect_errno)
-    echo "Falha na conexão: (".$mysqli->connect_errno.") ".$mysqli->connect_error; 
+    // if($conexao->connect_errno){
+    // echo "Falha na conexão"; 
+    // } else {
+    // echo "Conexão efetuada";
+    // }
 
 ?>
