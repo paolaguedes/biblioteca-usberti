@@ -52,6 +52,7 @@ body {
     border-bottom: 1px solid #C4C4C4;
     height: 50px;
     font-weight: bold;
+    background-color: transparent;
 }
 
 .container-section .form-container .form-content fieldset  select:focus {
@@ -101,6 +102,7 @@ body {
     color: white;
     transition: all 1s;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .container-section .form-container .botoes input:hover {
@@ -111,6 +113,7 @@ body {
     text-decoration: none;
     font-size: 20px;
     color: rgb(124, 67, 20);
+    cursor: pointer;
 }
 
 .container-section .form-container .botoes a:hover {
