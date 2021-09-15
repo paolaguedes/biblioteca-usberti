@@ -27,7 +27,7 @@
     <main>
         <div class="cards-container">
         <section class="section-cards">
-            <a href="#">
+            <a href="listaLivros.php">
                 <div>
                     <p>Disponíveis</p>
                     <img src="../img/icon-books.png" alt="">
