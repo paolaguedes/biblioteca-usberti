@@ -64,8 +64,9 @@
                        echo ' <a href="javascript://" class="bt" >';
                        echo ' <img id="view" src="../img/icon-view.png" width="30px"';
                        echo ' </a>';
+                       echo ' <a href="deletar.php?P=deletar&livro=<?php">';
                        echo ' <img src="../img/icon-trush.png" width="30px">  </td> </tr>';
-
+                       echo ' </a>';
                        echo '<tr class="infos_adicionais">';
 
                            echo ' <td >';
