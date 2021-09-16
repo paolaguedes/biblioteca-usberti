@@ -124,9 +124,6 @@ section table tbody .infos_adicionais {
     display: flex;
     flex-direction: column;
 }  
-section table tbody .infos_adicionais {
-    display: none;
-}
 
 section table tbody .infos_adicionais ul {
     text-align: start;
@@ -135,4 +132,14 @@ section table tbody .infos_adicionais ul {
 
 section table tbody .infos_adicionais ul li {
     list-style-type: none;
+}
+
+section table tbody .infos_adicionais {
+    overflow: hidden;
+    max-height: 0;
+}
+
+section table tbody .infos_adicionais.active {
+    overflow: visible;
+    max-height: 200px;
 }

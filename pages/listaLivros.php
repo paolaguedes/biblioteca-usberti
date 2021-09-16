@@ -30,16 +30,18 @@
                     </fieldset>
                 </form>
             </header>
-            <!-- lista dentro de lista para listar os elementos -->
             <main>
                 <section>
-                    <table>
+
+                    <table id="table-id">
                         <thead>
                             <tr>
                                 <th>Nome</th>
                                 <th>Autor</th>
                                 <th>Editora</th>
                                 <th>Edição</th>
+                                <th> </th>
+                                <th> </th>
                                 <th> </th>
                             </tr>
                         </thead>
@@ -52,12 +54,19 @@
 
                     if($resultado !== false && $resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()){
-
+                         
                        echo ' <tr class="infos_livro">';
-                       echo ' <td> <p>'. $row['nomeLivro'] .' </p> </td>';
+                       echo ' <td><p>'. $row['nomeLivro'] .' </p> </td>';
                        echo ' <td> <p>'. $row['autor'] .' </p> </td>';
                        echo ' <td> <p>'. $row['editora'] .' </p> </td> ';
                        echo ' <td> <p>'. $row['edicao'] .' </p> </td> ';
+
+
+                       echo '<td> <a href="javascript://">';
+                       echo ' <img class="bt bt-view" src="../img/icon-view.png" width="30px" />';
+                       echo ' </a> </td>';
+                       echo '<td> <img src="../img/icon-edit.png" width="30px" </td>';
+                       echo '<td> <img src="../img/icon-trush.png" width="30px">  </td> </tr>';
 
                        echo ' <td  colspan="2">';
                     //    botao para abrir e fechar as info do livro
@@ -67,16 +76,17 @@
                        echo ' <a href="deletar.php?P=deletar&livro=<?php">';
                        echo ' <img src="../img/icon-trush.png" width="30px">  </td> </tr>';
                        echo ' </a>';
+
                        echo '<tr class="infos_adicionais">';
 
-                           echo ' <td >';
-                           echo '<ul>';
-                           echo' <li> - Edição: '. $row['edicao'].'</li>';
-                           echo '<li> - Categoria: '. $row['categoria'].'</li>';
-                           echo '<li> - Local: '. $row['local'].'</li>';
-                           echo '<li> - Página: '. $row['pagina'].'</li>';
-                           echo '<li> - ISBN: '. $row['isbn'] .'<li> </td>';
-                           echo '</ul>';
+                        echo '<td >';
+                        echo '<ul>';
+                        echo' <li> - Edição: '. $row['edicao'].'</li>';
+                        echo '<li> - Categoria: '. $row['categoria'].'</li>';
+                        echo '<li> - Local: '. $row['local'].'</li>';
+                        echo '<li> - Página: '. $row['pagina'].'</li>';
+                        echo '<li> - ISBN: '. $row['isbn'] .'<li> </td>';
+                        echo '</ul>';
                         echo '</tr>';
                          }
                     }
