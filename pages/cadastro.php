@@ -30,12 +30,11 @@ if(isset($_POST['submit'])){
     // $result = $mysqli->query("SELECT * FROM livros WHERE isbn = '{$isbn}'");
     // $row = $result->fetch_row();
 
-    // if ($row[0] > 0) {
-    // echo "<script> alert('A chave ISBN já foi cadastrada anteriormente.') </script>";
-    // } else {
+    //  if ($row[0] > 0) {
+    //  echo "<script> alert('A chave ISBN já foi cadastrada anteriormente.') </script>";
+    //  } else {
     $result = mysqli_query($conexao, "INSERT INTO livros (isbn,nomeLivro,autor,edicao,categoria,editora,local,pagina)
     VALUES ('$isbn','$nomeLivro','$autor','$edicao','$categoria','$editora','$local','$pagina')");
-    // }
 
 }
 ?>
