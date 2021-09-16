@@ -61,11 +61,21 @@
                        echo ' <td> <p>'. $row['editora'] .' </p> </td> ';
                        echo ' <td> <p>'. $row['edicao'] .' </p> </td> ';
 
+
                        echo '<td> <a href="javascript://">';
                        echo ' <img class="bt bt-view" src="../img/icon-view.png" width="30px" />';
                        echo ' </a> </td>';
                        echo '<td> <img src="../img/icon-edit.png" width="30px" </td>';
                        echo '<td> <img src="../img/icon-trush.png" width="30px">  </td> </tr>';
+
+                       echo ' <td  colspan="2">';
+                    //    botao para abrir e fechar as info do livro
+                       echo ' <a href="javascript://" class="bt" >';
+                       echo ' <img id="view" src="../img/icon-view.png" width="30px"';
+                       echo ' </a>';
+                       echo ' <a href="deletar.php?P=deletar&livro=<?php">';
+                       echo ' <img src="../img/icon-trush.png" width="30px">  </td> </tr>';
+                       echo ' </a>';
 
                        echo '<tr class="infos_adicionais">';
 
