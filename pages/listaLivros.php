@@ -20,10 +20,17 @@
         <section class="container-list">
             <header class="container-list-header">
                 <div class="titulo">
+                <?php
+                        if(isset($_GET['delete'])){
+                            if($_GET['delete'] == 'ok'){
+                                echo 'Livro excluído com sucesso!';
+                            }
+                        }
+                    ?>
                     <h1>Livros disponíveis</h1>
                     <a href="cadastro.php">VOLTAR CADASTRO</a>
                 </div>
-                <form action="pesquisar.php" method="POST">
+                <form action="" method="POST">
                     <fieldset class="campo-pesquisar">
                         <img src="../img/lupa.svg" alt="lupa de pesquisa">
                         <input type="sumit" for="pesquisar" name="pesquisar" placeholder="Pesquisar na biblioteca">
@@ -47,7 +54,6 @@
                         </thead>
                     <tbody>
                 <?php
-
                 $conexao = new mysqli($host, $user, $password, $database);
                 $query = "SELECT * FROM livros  ";
                 $resultado = $conexao->query($query);
@@ -67,9 +73,8 @@
                        echo ' <img class="bt-view" src="../img/icon-view.png" width="30px">';
                        echo ' </a>';
 
-                       echo ' <a href="delete.php?del='.$row['nomeLivro'].'">';
+                       echo ' <a href="delete.php?isbn='.$row['isbn'].'">';                       
                        echo ' <img src="../img/icon-trush.png" width="30px">  </a> </td> </tr>';
-
                        echo '<tr class="infos_adicionais">';
 
                         echo '<td >';
