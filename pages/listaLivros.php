@@ -56,26 +56,19 @@
                         while ($row = $resultado->fetch_assoc()){
                          
                        echo ' <tr class="infos_livro">';
-                       echo ' <td><p>'. $row['nomeLivro'] .' </p> </td>';
+                       echo ' <td> <p>'. $row['nomeLivro'] .' </p> </td>';
                        echo ' <td> <p>'. $row['autor'] .' </p> </td>';
                        echo ' <td> <p>'. $row['editora'] .' </p> </td> ';
                        echo ' <td> <p>'. $row['edicao'] .' </p> </td> ';
 
-
-                       echo '<td> <a href="javascript://">';
-                       echo ' <img class="bt bt-view" src="../img/icon-view.png" width="30px" />';
-                       echo ' </a> </td>';
-                       echo '<td> <img src="../img/icon-edit.png" width="30px" </td>';
-                       echo '<td> <img src="../img/icon-trush.png" width="30px">  </td> </tr>';
-
-                       echo ' <td  colspan="2">';
+                       echo ' <td>';
                     //    botao para abrir e fechar as info do livro
-                       echo ' <a href="javascript://" class="bt" >';
-                       echo ' <img id="view" src="../img/icon-view.png" width="30px"';
+                       echo ' <a href="javascript://" >';
+                       echo ' <img class="bt-view" src="../img/icon-view.png" width="30px">';
                        echo ' </a>';
-                       echo ' <a href="deletar.php?P=deletar&livro=<?php">';
-                       echo ' <img src="../img/icon-trush.png" width="30px">  </td> </tr>';
-                       echo ' </a>';
+
+                       echo ' <a href="delete.php?del='.$row['nomeLivro'].'">';
+                       echo ' <img src="../img/icon-trush.png" width="30px">  </a> </td> </tr>';
 
                        echo '<tr class="infos_adicionais">';
 
@@ -85,8 +78,8 @@
                         echo '<li> - Categoria: '. $row['categoria'].'</li>';
                         echo '<li> - Local: '. $row['local'].'</li>';
                         echo '<li> - Página: '. $row['pagina'].'</li>';
-                        echo '<li> - ISBN: '. $row['isbn'] .'<li> </td>';
-                        echo '</ul>';
+                        echo '<li> - ISBN: '. $row['isbn'] .'<li>';
+                        echo '</ul> </td>';
                         echo '</tr>';
                          }
                     }
