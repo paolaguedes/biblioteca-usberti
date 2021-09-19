@@ -1,11 +1,12 @@
 <?php
-    session_start();   
-    require ("../connection.php");
+session_start();
+require("../connection.php");
 ?>
-    
-    
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,12 +21,12 @@
         <section class="container-list">
             <header class="container-list-header">
                 <div class="titulo">
-                <?php
-                        if(isset($_GET['delete'])){
-                            if($_GET['delete'] == 'ok'){
-                                echo 'Livro excluído com sucesso!';
-                            }
+                    <?php
+                    if (isset($_POST['delete'])) {
+                        if ($_POST['delete'] == 'ok') {
+                            echo 'Livro excluído com sucesso!';
                         }
+                    }
                     ?>
                     <h1>Livros disponíveis</h1>
                     <a href="cadastro.php">VOLTAR CADASTRO</a>
@@ -52,44 +53,54 @@
                                 <th> </th>
                             </tr>
                         </thead>
-                    <tbody>
-                <?php
-                $conexao = new mysqli($host, $user, $password, $database);
-                $query = "SELECT * FROM livros  ";
-                $resultado = $conexao->query($query);
+                        <tbody>
+                            <?php
+                                $conexao = new mysqli($host, $user, $password, $database);
 
-                    if($resultado !== false && $resultado->num_rows > 0) {
-                        while ($row = $resultado->fetch_assoc()){
-                         
-                       echo ' <tr class="infos_livro">';
-                       echo ' <td> <p>'. $row['nomeLivro'] .' </p> </td>';
-                       echo ' <td> <p>'. $row['autor'] .' </p> </td>';
-                       echo ' <td> <p>'. $row['editora'] .' </p> </td> ';
-                       echo ' <td> <p>'. $row['edicao'] .' </p> </td> ';
+                                if (isset($_POST['pesquisar'])) {
+                                    $pesquisar = $_POST['pesquisar'];
 
-                       echo ' <td>';
-                    //    botao para abrir e fechar as info do livro
-                       echo ' <a href="javascript://" >';
-                       echo ' <img class="bt-view" src="../img/icon-view.png" width="30px">';
-                       echo ' </a>';
+                                $query = "SELECT * FROM livros WHERE nomeLivro LIKE '%$pesquisar%'";
+                                $resultado = $conexao->query($query);
+                                
+                                    
+                                if ($resultado !== false && $resultado->num_rows > 0) {
+                                    while ($row = $resultado->fetch_assoc()) {
 
-                       echo ' <a href="delete.php?isbn='.$row['isbn'].'">';                       
-                       echo ' <img src="../img/icon-trush.png" width="30px">  </a> </td> </tr>';
-                       echo '<tr class="infos_adicionais">';
 
-                        echo '<td >';
-                        echo '<ul>';
-                        echo' <li> - Edição: '. $row['edicao'].'</li>';
-                        echo '<li> - Categoria: '. $row['categoria'].'</li>';
-                        echo '<li> - Local: '. $row['local'].'</li>';
-                        echo '<li> - Página: '. $row['pagina'].'</li>';
-                        echo '<li> - ISBN: '. $row['isbn'] .'<li>';
-                        echo '</ul> </td>';
-                        echo '</tr>';
-                         }
-                    }
-                        ?>
-                    </tbody>
+                                        echo ' <tr class="infos_livro">';
+                                        echo ' <td> <p>' . $row['nomeLivro'] . ' </p> </td>';
+                                        echo ' <td> <p>' . $row['autor'] . ' </p> </td>';
+                                        echo ' <td> <p>' . $row['editora'] . ' </p> </td> ';
+                                        echo ' <td> <p>' . $row['edicao'] . ' </p> </td> ';
+
+                                        echo ' <td>';
+                                        echo ' <a href="" >';
+                                        echo ' <img class="" src="../img/icon-edit.png" width="30px">';
+                                        echo ' </a>';
+                                        //    Botão para abrir e fechar as info do livro
+                                        echo ' <a href="javascript://" >';
+                                        echo ' <img class="bt-view" src="../img/icon-view.png" width="30px">';
+                                        echo ' </a>';
+
+                                        echo ' <a href="delete.php?isbn=' . $row['isbn'] . '">';
+                                        echo ' <img src="../img/icon-trush.png" width="30px">  </a> </td> </tr>';
+                                        echo '<tr class="infos_adicionais">';
+
+                                        echo '<td >';
+                                        echo '<ul>';
+                                        echo ' <li> - Edição: ' . $row['edicao'] . '</li>';
+                                        echo '<li> - Categoria: ' . $row['categoria'] . '</li>';
+                                        echo '<li> - Local: ' . $row['local'] . '</li>';
+                                        echo '<li> - Página: ' . $row['pagina'] . '</li>';
+                                        echo '<li> - ISBN: ' . $row['isbn'] . '<li>';
+                                        echo '</ul> </td>';
+                                        echo '</tr>';
+                                    }
+                                } 
+                            } 
+                            ?>
+                        </tbody>
                     </table>
                 </section>
             </main>
