@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("../connection.php");
+include_once('../connection.php');
 ?>
 
 
@@ -55,7 +55,7 @@ require("../connection.php");
                         </thead>
                         <tbody>
                             <?php
-                                $conexao = new mysqli($host, $user, $password, $database);
+                               
 
                                 if (isset($_POST['pesquisar'])) {
                                     $pesquisar = $_POST['pesquisar'];
@@ -75,7 +75,7 @@ require("../connection.php");
                                         echo ' <td> <p>' . $row['edicao'] . ' </p> </td> ';
 
                                         echo ' <td>';
-                                        echo ' <a href="" >';
+                                        echo ' <a href="editaLivro.php" >';
                                         echo ' <img class="" src="../img/icon-edit.png" width="30px">';
                                         echo ' </a>';
                                         //    Botão para abrir e fechar as info do livro
