@@ -1,0 +1,3 @@
+-- Validaçao de login e senha
+-- UPDATE de dados da tabela
+-- criar login e senha no banco de dados
