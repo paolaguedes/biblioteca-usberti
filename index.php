@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+include("connection.php");
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,16 +26,16 @@
             <img class="logo" src="./img/logo.png">
         </div>
         <div class="form-container">
-            <form action="./pages/inicial.php" method="POST" class="form-login">
+            <form action="./pages/valida.php" method="POST" class="form-login">
                 <fieldset>
                     <legend>
                         Login
                     </legend>
                     <label for="txtname">Nome</label>
-                    <input id="txtname" type="text" name="name">                    
+                    <input id="txtname" type="text" name="administrador" required>                    
                     <label for="txtpass">Senha</label>
-                    <input id="txtpass" type="pass" name="pass">                    
-                    <input id="btn" type="submit" value="ENTRAR" class="btn">
+                    <input id="txtpass" type="pass" name="senha" required>                    
+                    <input id="btn" type="submit" name="btn-entrar" value="ENTRAR" class="btn">
                 </fieldset>
             </form>
         </div>
