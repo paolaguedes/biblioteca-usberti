@@ -9,15 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Livros :: Biblioteca</title>
-    <link rel="stylesheet" href="../styles/listaLivros.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/livro.css">
 </head>
 
 <body>
     <main>
         <section class="container-list">
             <header class="container-list-header">
-                <div class="titulo">
                     <?php
                     if (isset($_POST['delete'])) {
                         if ($_POST['delete'] == 'ok') {
@@ -25,24 +24,12 @@
                         }
                     }
                     ?>
-                    <h1>Livros disponíveis</h1>
-                    <a href="listaLivros.php">VOLTAR LISTA DE LIVROS</a>
-                </div>
             </header>
             <main>
-                <section>
+                <section class="infos_livro">
+                    <h1>Livro(s) encontrado(s)</h1>
+                    <a class="btn-livros" href="listaLivros.php">VOLTAR LISTA DE LIVROS</a>
 
-                    <table id="table-id">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Autor</th>
-                                <th>Editora</th>
-                                <th>Edição</th>
-                                <th colspan="3"> </th>
-                            </tr>
-                        </thead>
-                        <tbody>
                         <?php
 
                             $pesquisar = $_POST['nome_livro'];
@@ -50,40 +37,28 @@
                             $resultado_livro = mysqli_query($conexao, $result_livro);
 
                             while($row_livros = mysqli_fetch_array($resultado_livro)) {
+                                        echo '<div class="livro">';
+                                        echo ' <p> Nome: ' . $row_livros['nomeLivro'] . ' </p> ';
+                                        echo ' <p> Autor: ' . $row_livros['autor'] . ' </p> ';
+                                        echo ' <p> Editora: ' . $row_livros['editora'] . ' </p>  ';
+                                        echo ' <p> Edição: ' . $row_livros['edicao'] . ' </p> ';
+                                        echo ' <p> Edição: ' .$row_livros['edicao'] . '</td>';
+                                        echo ' <p> Categoria: ' . $row_livros['categoria'] . '</p>';
+                                        echo ' <p> Local: ' . $row_livros['local'] . '</p>';
+                                        echo ' <p> Página: ' . $row_livros['pagina'] . '</p>';
+                                        echo ' <p> ISBN: ' . $row_livros['isbn'] . '</p>';
 
-                                        echo ' <tr class="infos_livro">';
-                                        echo ' <td> <p>' . $row_livros['nomeLivro'] . ' </p> </td>';
-                                        echo ' <td> <p>' . $row_livros['autor'] . ' </p> </td>';
-                                        echo ' <td> <p>' . $row_livros['editora'] . ' </p> </td> ';
-                                        echo ' <td> <p>' . $row_livros['edicao'] . ' </p> </td> ';
-
-                                        echo ' <td>';
                                         echo ' <a href="editaLivro.php?isbn='. $row_livros['isbn'] .'">';
                                         echo ' <img class="" src="../img/icon-edit.png" width="30px">';
                                         echo ' </a>';
-                                        
-                                        //    Botão para abrir e fechar as info do livro
-                                        echo ' <a href="javascript://" >';
-                                        echo ' <img class="bt-view" src="../img/icon-view.png" width="30px">';
-                                        echo ' </a>';
+                                    
 
                                         echo ' <a href="delete.php?isbn=' . $row_livros['isbn'] . '">';
-                                        echo ' <img src="../img/icon-trush.png" width="30px">  </a> </td> </tr>';
-                                        echo ' <tr class="infos_adicionais">';
-
-                                        echo ' <td >';
-                                        echo ' <ul>';
-                                        echo ' <li> - Edição: ' .$row_livros['edicao'] . '</li>';
-                                        echo ' <li> - Categoria: ' . $row_livros['categoria'] . '</li>';
-                                        echo ' <li> - Local: ' . $row_livros['local'] . '</li>';
-                                        echo ' <li> - Página: ' . $row_livros['pagina'] . '</li>';
-                                        echo ' <li> - ISBN: ' . $row_livros['isbn'] . '<li>';
-                                        echo ' </ul> </td>';
-                                        echo ' </tr>';
+                                        echo ' <img src="../img/icon-trush.png" width="30px">  </a>';
+                                        echo '</div>';
                             }
                                     ?>
-                        </tbody>
-                    </table>
+
                 </section>
             </main>
         </section>

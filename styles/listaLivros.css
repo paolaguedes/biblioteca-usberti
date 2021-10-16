@@ -66,13 +66,8 @@ body {
 }
 
 .container-list .container-list-header form .campo-pesquisar #pesquisar {
-    height: 40px;
-    cursor: pointer;
-    background-color: rgba(161, 118, 78,0.9);
-    color: white;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    padding: 5px;
+    background: transparent;
+
 }
 
 .container-list .container-list-header form .campo-pesquisar #campoPesquisar:focus {
@@ -82,6 +77,11 @@ body {
 
 .container-list .container-list-header form .campo-pesquisar #campoPesquisar::placeholder {
     color: white;
+}
+
+.fa-search {
+    color: white;
+    padding-right: 10px;
 }
 
 main section {
