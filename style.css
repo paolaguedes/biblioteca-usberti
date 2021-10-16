@@ -79,3 +79,8 @@ input:focus {
     width: 50%;
     margin: 2vh 8vh ;
 }
+
+.textErro {
+    color: rgb(190, 0, 0);
+    text-align: center;
+}
