@@ -2,28 +2,17 @@
 session_start();
 include_once('../connection.php');
 
-$isbn = filter_input(INPUT_POST, 'isbn', FILTER_SANITIZE_NUMBER_INT);
-$nomeLivro = filter_input(INPUT_POST, 'nomeLivro', FILTER_SANITIZE_STRING);
-$autor = filter_input(INPUT_POST, 'autor', FILTER_SANITIZE_STRING);
-$edicao = filter_input(INPUT_POST, 'edicao', FILTER_SANITIZE_NUMBER_INT);
-$categoria = filter_input(INPUT_POST, 'categoria', FILTER_SANITIZE_STRING);
-$editora = filter_input(INPUT_POST, 'editora', FILTER_SANITIZE_NUMBER_INT);
-$local = filter_input(INPUT_POST, 'local', FILTER_SANITIZE_STRING);
-$pagina = filter_input(INPUT_POST, 'pagina', FILTER_SANITIZE_NUMBER_INT);
+$isbn =$_GET['isbn'];
 
-$result_livro = "UPDATE livros SET (isbn = '$isbn', nomeLivro = '$nomeLivro',
-                autor = '$autor', edicao = '$edicao', categoria = '$categoria',
-                editora = '$editora', local = '$local', pagina = '$pagina')
-                WHERE isbn = '$isbn'";
-$resultado_livro = mysqli_query($conexao, $result_livro);
 
+/*
 if(mysqli_affected_rows($conexao)){
     $_SESSION['msg'] = "<p style='color:green;'>Usuário editado com sucesso</p>";
     header("Location: listaLivros.php");
 } else{
     $_SESSION['msg'] = "<p style='color:red;'>Usuário não foi editado com sucesso</p>";
     header("Location: listaLivros.php");
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -42,8 +31,14 @@ if(mysqli_affected_rows($conexao)){
             <div class="div-titulo">
                 <h1>Ficha</h1>
             </div>
-            <form class="form-container" action="editaLivro.php" method="POST">
+            <form class="form-container" action="enviarDadosLivro.php?isbn=<?php echo $isbn ?>" method="POST">
             <div class="form-content">
+                <?php
+
+            $livro = "SELECT * from livros WHERE isbn = '$isbn'";
+            $query = mysqli_query($conexao, $livro);
+            $row_livro = mysqli_fetch_assoc($query);
+            ?>
              <fieldset id="coluna1">
                 <label for="nomeLivro">Nome</label>
                 <input type="text" name="nomeLivro" id="nomeLivro" value="<?php echo $row_livro['nomeLivro'];?>" required>
@@ -66,7 +61,7 @@ if(mysqli_affected_rows($conexao)){
 
              <fieldset id="coluna2">
                 <label id="editora">Editora</label>
-                 <input type="text" name="editora" for="editora" value="<?php echo $row_livro['categoria'];?>" required>
+                 <input type="text" name="editora" for="editora" value="<?php echo $row_livro['editora'];?>" required>
                   <label id="local">Local</label>
                    <input type="text" name="local" for="local" value="<?php echo $row_livro['local'];?>" required>
                   <label id="pagina">Páginas</label>
@@ -82,7 +77,7 @@ if(mysqli_affected_rows($conexao)){
             <a href="../pages/inicial.php">Menu</a>
         </div>
 
-      </form>   
+      </form>
         </div>
         </section>
     </main>
