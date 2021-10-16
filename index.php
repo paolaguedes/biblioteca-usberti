@@ -26,7 +26,7 @@ include("connection.php");
             <img class="logo" src="./img/logo.png">
         </div>
         <div class="form-container">
-            <form action="./pages/valida.php" method="POST" class="form-login">
+            <form action="./pages/inicial.php" method="POST" class="form-login">
                 <fieldset>
                     <legend>
                         Login
