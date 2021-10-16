@@ -3,16 +3,6 @@ session_start();
 include_once('../connection.php');
 
 $isbn =$_GET['isbn'];
-
-
-/*
-if(mysqli_affected_rows($conexao)){
-    $_SESSION['msg'] = "<p style='color:green;'>Usuário editado com sucesso</p>";
-    header("Location: listaLivros.php");
-} else{
-    $_SESSION['msg'] = "<p style='color:red;'>Usuário não foi editado com sucesso</p>";
-    header("Location: listaLivros.php");
-}*/
 ?>
 
 <!DOCTYPE html>

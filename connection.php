@@ -6,10 +6,4 @@
     $database = "heroku_165c5fc426a3b16";
 
     $conexao = new mysqli($host, $user, $password, $database);
-
-    // if($conexao->connect_errno){
-    // echo "Falha na conexão";
-    // } else {
-    // echo "Conexão efetuada";
-    // }
-    
+?>

@@ -17,7 +17,5 @@ $result_livro ="UPDATE livros SET nomeLivro = '$nomeLivro',
                 autor = '$autor', edicao = '$edicao', categoria = '$categoria',
                 editora = '$editora', local = '$local', pagina = '$pagina'
                 WHERE isbn = '$isbn'";
-//$resultado_livro = mysqli_query($conexao, $result_livro);
 mysqli_query($conexao,$result_livro);
 
-//header("Location: listaLivros.php");

@@ -37,51 +37,11 @@ $row_livro = mysqli_fetch_assoc($resultado_livro);
                 </div>
                 <form action="pesquisar.php" method="POST">
                     <fieldset class="campo-pesquisar">
-                        <!-- <img src="../img/lupa.svg" alt="lupa de pesquisa"> -->
-                        <input id="campoPesquisar" type="text" id="pesquisar" name="Campopesquisar" placeholder="digite o nome do livro..">
+                        <input id="campoPesquisar" type="text" id="pesquisar" name="nome_livro" placeholder="digite o nome do livro..">
                         <input id="pesquisar" type="submit" value="pesquisar" name="pesquisar">
                         
                     </fieldset>
                 </form>
-                 <?php
-
-                                // $pesquisar = filter_input(INPUT_POST, 'pesquisar', FILTER_SANITIZE_STRING);
-                                // if($pesquisar) {
-                                //     $Campopesquisar = filter_input(INPUT_POST, 'Campopesquisar', FILTER_SANITIZE_STRING);
-                                //     $result_usuario = "SELECT * FROM livros WHERE nomeLivro LIKE '%$Campopesquisar%'";
-                                //     $resultado_usuario = mysqli_query($conexao, $result_usuario);
-                                //     while($row_usuario = mysqli_fetch_assoc($resultado_usuario)){
-                                //         echo ' <tr class="infos_livro">';
-                                //         echo ' <td> <p>' . $row['nomeLivro'] . ' </p> </td>';
-                                //         echo ' <td> <p>' . $row['autor'] . ' </p> </td>';
-                                //         echo ' <td> <p>' . $row['editora'] . ' </p> </td> ';
-                                //         echo ' <td> <p>' . $row['edicao'] . ' </p> </td> ';
-
-                                //         echo ' <td>';
-                                //         echo ' <a href="editaLivro.php?isbn='. $row['isbn'] .'">';
-                                //         echo ' <img class="" src="../img/icon-edit.png" width="30px">';
-                                //         echo ' </a>';
-                                //         //    Botão para abrir e fechar as info do livro
-                                //         echo ' <a href="javascript://" >';
-                                //         echo ' <img class="bt-view" src="../img/icon-view.png" width="30px">';
-                                //         echo ' </a>';
-
-                                //         echo ' <a href="delete.php?isbn=' . $row['isbn'] . '">';
-                                //         echo ' <img src="../img/icon-trush.png" width="30px">  </a> </td> </tr>';
-                                //         echo ' <tr class="infos_adicionais">';
-
-                                //         echo ' <td >';
-                                //         echo ' <ul>';
-                                //         echo ' <li> - Edição: ' . $row['edicao'] . '</li>';
-                                //         echo ' <li> - Categoria: ' . $row['categoria'] . '</li>';
-                                //         echo ' <li> - Local: ' . $row['local'] . '</li>';
-                                //         echo ' <li> - Página: ' . $row['pagina'] . '</li>';
-                                //         echo ' <li> - ISBN: ' . $row['isbn'] . '<li>';
-                                //         echo ' </ul> </td>';
-                                //         echo ' </tr>';
-                                //     }
-                                // }
-                                ?> 
             </header>
             <main>
                 <section>
@@ -93,9 +53,7 @@ $row_livro = mysqli_fetch_assoc($resultado_livro);
                                 <th>Autor</th>
                                 <th>Editora</th>
                                 <th>Edição</th>
-                                <th> </th>
-                                <th> </th>
-                                <th> </th>
+                                <th colspan="3"> </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -135,10 +93,7 @@ $row_livro = mysqli_fetch_assoc($resultado_livro);
                                         echo ' </ul> </td>';
                                         echo ' </tr>';
                                     }
-                                } 
-                            
-                                
-
+                                }           
                             ?>
                         </tbody>
                     </table>
@@ -148,5 +103,4 @@ $row_livro = mysqli_fetch_assoc($resultado_livro);
     </main>
     <script type="text/javascript" src="../main.js"></script>
 </body>
-
 </html>

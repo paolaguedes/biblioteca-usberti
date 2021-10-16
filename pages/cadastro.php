@@ -1,21 +1,6 @@
 <?php
 
 if(isset($_POST['submit'])){
-        // print_r('- nome: ' . $_POST['nomeLivro']);
-        // print_r('<br>');
-        // print_r('- autor: ' . $_POST['autor']);
-        // print_r('<br>');
-        // print_r('- edicao: ' . $_POST['edicao']);
-        // print_r('<br>');
-        // print_r('- categoria: ' . $_POST['categoria']);
-        // print_r('<br>');
-        // print_r('- local: ' . $_POST['local']);
-        // print_r('<br>');
-        // print_r('- editora: ' . $_POST['editora']);
-        // print_r('<br>');
-        // print_r('- isbn: ' . $_POST['isbn']);
-        // print_r('<br>');
-        // print_r('- pagina: ' . $_POST['pagina']);
         include_once('../connection.php');
 
         $isbn =  $_POST['isbn'];
@@ -30,8 +15,6 @@ if(isset($_POST['submit'])){
 
     $result = mysqli_query($conexao, "INSERT INTO livros (isbn,nomeLivro,autor,edicao,categoria,editora,local,pagina)
     VALUES ($isbn,'$nomeLivro','$autor',$edicao,'$categoria','$editora','$local',$pagina)");
-
-   
 }
 ?>
 <!DOCTYPE html>
@@ -79,8 +62,8 @@ if(isset($_POST['submit'])){
                    <input type="text" name="local" for="local" required>
                   <label id="pagina">Páginas</label>
                   <input type="number" name="pagina" for="pagina" min="1" required>                
-                 <label id="isbn">ISBN</label>
-                <input type="text" name="isbn" for="isbn" maxlenght="" required>
+                 <label id="isbn">ISBN (apenas números)</label>
+                <input type="text" name="isbn" for="isbn" maxlenght="13" required>
             </fieldset>
         </div>
 
