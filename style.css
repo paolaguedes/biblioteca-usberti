@@ -18,24 +18,30 @@ main {
     display: flex;  
     justify-content: space-between;
     padding: 40px 45px;   
+    position: relative;
 }
 
 .logo {
-    margin: 70px 0;
     width: 100px;
     height: 100px;
     border-radius: 100px;
     object-fit: cover;
     filter: grayscale(90%);
 } 
-
+legend {
+    width: 100px;
+    height: 100px;
+}
 .form-login {
-    width: 300px;
-    margin: 100px auto;
     padding: 10px;
+    position: absolute;
+    right: 550px;
+    top: 100px;
 }
 
 fieldset {
+    height: 500px;
+    width: 550px;
     font-size: 18px;
     text-transform: uppercase;
     padding: 15px 30px;
@@ -45,16 +51,10 @@ fieldset {
     border-radius: 10px;
 }
 
-legend {
-    background-color: rgba(101, 53, 15, 0.9);
-    padding: 10px;
-    color: white;
-    border-radius: 10px;
-}
 
 label {
     display: block;
-    margin: 20px 0 0;
+    margin: 70px 0 0;
 }
 
 input {
@@ -71,13 +71,13 @@ input:focus {
 
 #btn {
     background-color: rgba(101, 53, 15, 0.9);
-    padding: 10px;
+    padding: 1em 2em;
     color: white;
     border: 0;
-    margin-top: 20px;
+    margin-top: 40px;
     border-radius: 10px;
-    width: 50%;
-    margin: 2vh 8vh ;
+    width: 100%;
+    font-size: 20px;
 }
 
 .textErro {

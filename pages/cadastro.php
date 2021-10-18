@@ -1,22 +1,4 @@
-<?php
 
-if(isset($_POST['submit'])){
-        include_once('../connection.php');
-
-        $isbn =  $_POST['isbn'];
-        $nomeLivro =  $_POST['nomeLivro'];
-        $autor =  $_POST['autor'];
-        $edicao =  $_POST['edicao'];
-        $categoria =  $_POST['categoria'];
-        $editora =  $_POST['editora'];
-        $local =  $_POST['local'];
-        $pagina =  $_POST['pagina'];
-       
-
-    $result = mysqli_query($conexao, "INSERT INTO livros (isbn,nomeLivro,autor,edicao,categoria,editora,local,pagina)
-    VALUES ($isbn,'$nomeLivro','$autor',$edicao,'$categoria','$editora','$local',$pagina)");
-}
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,6 +16,8 @@ if(isset($_POST['submit'])){
         <div class="container-section">
             <div class="div-titulo">
                 <h1>Ficha</h1>
+                <a href="../pages/inicial.php">Menu</a>
+                <a href="../pages/listaLivros.php">Livros cadastrados</a>
             </div>
             <form class="form-container" action="cadastro.php" method="POST">
             <div class="form-content">
@@ -71,8 +55,27 @@ if(isset($_POST['submit'])){
 
         <div class="botoes">
             <a href="#"><input type="submit" name="submit" value="CADASTRAR" ></a>
+
+            <?php
+                    if(isset($_POST['submit'])){
+                            include_once('../connection.php');
+
+                            $isbn =  $_POST['isbn'];
+                            $nomeLivro =  $_POST['nomeLivro'];
+                            $autor =  $_POST['autor'];
+                            $edicao =  $_POST['edicao'];
+                            $categoria =  $_POST['categoria'];
+                            $editora =  $_POST['editora'];
+                            $local =  $_POST['local'];
+                            $pagina =  $_POST['pagina'];
+                        
+                        $result = mysqli_query($conexao, "INSERT INTO livros (isbn,nomeLivro,autor,edicao,categoria,editora,local,pagina)
+                        VALUES ($isbn,'$nomeLivro','$autor',$edicao,'$categoria','$editora','$local',$pagina)");
+                                    
+                        echo "<p class='green'>Cadastro feito com sucesso.</p>";
+                    }
+            ?>
             <a href="#"><input type="reset" name="reset" value="RESETAR"></a>
-            <a href="../pages/inicial.php">Menu</a>
         </div>
 
       </form>   

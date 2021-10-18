@@ -21,9 +21,11 @@ body {
 }
 
 .container-section .div-titulo {
-    padding: 4%;
+    padding: 4% 0 0;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container-section .div-titulo h1 {
@@ -34,6 +36,13 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+}
+
+.container-section .div-titulo a {
+    color: rgba(101,53,15,0.76);
+    font-size: 1.3em;
+    border-radius: 20px;
+    letter-spacing: 2px;
 }
 
 .container-section .form-container .form-content {
@@ -118,4 +127,8 @@ body {
 
 .container-section .form-container .botoes a:hover {
     color: rgb(51, 28, 9);
+}
+
+.green {
+    color: green;
 }

@@ -1,0 +1,14 @@
+.div-bg {
+    height: 350px;
+    background-size: cover;
+    background: url(../img/bg-books.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    filter:brightness(60%);
+    box-shadow: 1px 1px 5px rgb(167, 103, 1);
+    overflow: hidden;
+}
