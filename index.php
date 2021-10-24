@@ -30,7 +30,7 @@ include("connection.php");
                     <label for="txtname">Nome</label>
                     <input id="txtname" type="text" name="administrador" required>                    
                     <label for="txtpass">Senha</label>
-                    <input id="txtpass" type="pass" name="senha" required>                    
+                    <input id="txtpass" type="password"  minlength="4" name="senha" required>                    
                     <input id="btn" type="submit" name="btn-entrar" value="ENTRAR" class="btn">
                     <p id="erro" class="erro"></p>
                 </fieldset>
