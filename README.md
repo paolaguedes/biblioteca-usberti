@@ -6,12 +6,12 @@ O objetivo do projeto é informatizar processos, como: busca por livros existent
 
 #
 
-🎨 Layout feito previamente pelo figma ♥
+🎨 Layouts do projeto ♥
 
 <br>
 <div style="display: flex;">
-<img src="https://user-images.githubusercontent.com/53832972/137594575-493f316c-cc9a-4c67-89b8-8cf51bad715b.png" width="400" height="220">
-<img src="https://user-images.githubusercontent.com/53832972/137594613-ce5b45ef-ffb5-4c65-8652-478cfcfbeb81.png" width="400" height="220">
+<img src="https://user-images.githubusercontent.com/53832972/138601073-27e6b40e-dcc3-4d2d-976c-f968ceadb7a9.png" width="400" height="220">
+<img src="https://user-images.githubusercontent.com/53832972/138601085-e421d4e2-4ee0-4de7-9c4a-0ec1b629b47d.png" width="400" height="220">
 <img src="https://user-images.githubusercontent.com/53832972/137594620-c2660d60-7779-498e-b7ee-c3267ad84312.png" width="400" height="220">
 <img src="https://user-images.githubusercontent.com/53832972/137594652-b8b55f74-1801-4d85-b363-e5364138376a.png" width="400" height="220">
 </div>
@@ -31,7 +31,8 @@ O objetivo do projeto é informatizar processos, como: busca por livros existent
 * [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML) - Para estruturação
 * [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS) - Para estilização
 * [JS](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) - Para interação
-* [PHP](https://www.php.net/docs.php) - Para armazenamento de dados
+* [PHP](https://www.php.net/docs.php) - Para conexão entre servidor e a interface
+* [MySQL](https://dev.mysql.com/doc/) - Para armazenamento de dados
 
 ### ✒️ Autores
 
