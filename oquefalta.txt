@@ -1,2 +1,0 @@
--- Validaçao de login e senha
--- criar login e senha no banco de dados

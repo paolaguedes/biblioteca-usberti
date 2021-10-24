@@ -80,7 +80,8 @@ input:focus {
     font-size: 20px;
 }
 
-.textErro {
+.erro {
     color: rgb(190, 0, 0);
     text-align: center;
+    padding: 2px 0 ;
 }
